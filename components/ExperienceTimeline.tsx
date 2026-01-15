@@ -12,7 +12,7 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
     return (
         <div className="relative pl-8 md:pl-0">
             {/* Songline (The Path) */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-ochre via-terracotta to-ochre transform -translate-x-1/2 opacity-50" />
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-neon-cyan via-neon-purple to-neon-cyan transform -translate-x-1/2 opacity-50" />
 
             <div className="space-y-12">
                 {experiences.map((job, index) => {
@@ -31,7 +31,7 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
                                 <GlassCard className="p-6 relative group border-l-4 border-ochre/50">
                                     {/* Connection Dot */}
                                     <div
-                                        className={`absolute top-1/2 w-4 h-4 rounded-full bg-ochre border-4 border-black z-10 hidden md:block
+                                        className={`absolute top-1/2 w-4 h-4 rounded-full bg-neon-cyan border-4 border-black z-10 hidden md:block
                     ${isLeft
                                                 ? "-left-[calc(2rem_+_2px)] translate-x-[-50%]" // Adjusted for spacing
                                                 : "-right-[calc(2rem_+_18px)] translate-x-[50%]"
@@ -43,22 +43,22 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
                                         }}
                                     />
                                     {/* Mobile Dot */}
-                                    <div className="absolute left-[-2rem] top-8 w-4 h-4 rounded-full bg-ochre border-4 border-black z-10 md:hidden" />
+                                    <div className="absolute left-[-2rem] top-8 w-4 h-4 rounded-full bg-neon-cyan border-4 border-black z-10 md:hidden" />
 
                                     <div className="flex justify-between items-start mb-2 flex-wrap gap-2">
-                                        <h3 className="text-xl font-bold text-cream">
+                                        <h3 className="text-xl font-bold text-neon-light">
                                             {job.role}
                                         </h3>
-                                        <span className="text-sm font-mono text-ochre bg-ochre/10 px-2 py-1 rounded">
+                                        <span className="text-sm font-mono text-neon-cyan bg-neon-cyan/10 px-2 py-1 rounded">
                                             {job.startDate} — {job.endDate}
                                         </span>
                                     </div>
 
-                                    <div className="text-terracotta font-medium mb-4">
+                                    <div className="text-neon-purple font-medium mb-4">
                                         {job.company}
                                     </div>
 
-                                    <p className="text-cream/90 text-sm leading-relaxed mb-4">
+                                    <p className="text-neon-light/90 text-sm leading-relaxed mb-4">
                                         {job.description}
                                     </p>
 
@@ -66,7 +66,7 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
                                         {job.technologies.slice(0, 4).map((tech) => (
                                             <span
                                                 key={tech}
-                                                className="text-xs font-mono text-cream/70 border border-cream/20 px-2 py-1 rounded-full hover:bg-cream/10 transition-colors"
+                                                className="text-xs font-mono text-neon-light/70 border border-cream/20 px-2 py-1 rounded-full hover:bg-cream/10 transition-colors"
                                             >
                                                 {tech}
                                             </span>

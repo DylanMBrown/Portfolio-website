@@ -60,7 +60,7 @@ export function SkillsMarquee({ skills }: SkillsMarqueeProps) {
     const skillString = skills.map(s => s.name).join(" • ");
 
     return (
-        <section className="py-24 overflow-hidden relative z-10 bg-ochre/10 backdrop-blur-sm border-y border-ochre/20">
+        <section className="py-24 overflow-hidden relative z-10 bg-neon-cyan/10 backdrop-blur-sm border-y border-ochre/20">
             <ParallaxText baseVelocity={-2}>{skillString}</ParallaxText>
             <ParallaxText baseVelocity={2}>{skillString}</ParallaxText>
         </section>

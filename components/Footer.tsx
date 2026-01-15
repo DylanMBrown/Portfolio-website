@@ -17,7 +17,7 @@ export function Footer({ socialLinks }: FooterProps) {
               Portfolio
             </h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Full Stack Developer passionate about building accessible,
+              Web Developer & IT Specialist passionate about building accessible,
               performant web applications.
             </p>
           </div>

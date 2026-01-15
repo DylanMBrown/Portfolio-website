@@ -21,9 +21,8 @@ export const metadata: Metadata = {
     "IT",
     "AI",
     "LLM",
-    "Homelaber",
     "Networker",
-    "Full Stack Developer",
+    "Web Developer",
     "3D Portfolio",
     "Graffiti Wall",
   ],
@@ -63,14 +62,13 @@ export default function RootLayout({
 }>) {
   const jsonLd = {
     "@context": "https://schema.org",
-    "@type": "Person",
     name: "Dylan Brown",
-    jobTitle: "Full Stack Developer",
-    url: "https://yourdomain.com",
+    jobTitle: "Web Developer",
+    url: "https://dylanbrown.dev",
     sameAs: ["https://github.com/dbro", "https://linkedin.com/in/dbro"],
     knowsAbout: [
       "Web Development",
-      "Full Stack Development",
+      "IT Systems",
       "Next.js",
       "React",
       "TypeScript",

@@ -10,21 +10,16 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        aboriginal: {
-          ochre: "#D4A017",
-          terracotta: "#CC5500",
-          sienna: "#A0522D",
-          charcoal: "#2D2D2D",
-          cream: "#F5F5DC",
-          "blood-red": "#8B0000",
-          black: "#1A1A1A",
-          white: "#FFFFFF",
-          "desert-sunset": "#E9B44C",
-          "night-country": "#2D2D2D",
-          "earth-dream": "#A0522D",
-          "glass-light": "rgba(245, 245, 220, 0.15)",
-          "glass-dark": "rgba(26, 26, 26, 0.25)",
-          "glass-border": "rgba(212, 165, 23, 0.3)",
+        neon: {
+          cyan: "#00f3ff",
+          purple: "#bc13fe",
+          green: "#ccff00",
+          pink: "#ff0099",
+          dark: "#050a14",
+          light: "#e0f2fe",
+          "glass-light": "rgba(224, 242, 254, 0.1)",
+          "glass-dark": "rgba(5, 10, 20, 0.6)",
+          "glass-border": "rgba(0, 243, 255, 0.3)",
         },
       },
 

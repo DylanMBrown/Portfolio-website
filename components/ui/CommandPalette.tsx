@@ -154,7 +154,7 @@ export function CommandPalette() {
                 </button>
               ))}
               {filteredCommands.length === 0 && (
-                <div className="py-4 text-center text-cream/60">
+                <div className="py-4 text-center text-neon-light/60">
                   No commands found matching &quot;{search}&quot;
                 </div>
               )}

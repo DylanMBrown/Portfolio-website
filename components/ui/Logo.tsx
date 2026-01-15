@@ -7,9 +7,9 @@ export function Logo({ size = "md" }: { size?: "sm" | "md" | "lg" }) {
 
   return (
     <span className={`${sizeClasses[size]} font-mono font-bold tracking-tight`}>
-      <span className="text-ochre">&lt;</span>
-      <span className="text-cream">DB</span>
-      <span className="text-ochre"> /&gt;</span>
+      <span className="text-neon-cyan">&lt;</span>
+      <span className="text-neon-light">DB</span>
+      <span className="text-neon-cyan"> /&gt;</span>
     </span>
   );
 }

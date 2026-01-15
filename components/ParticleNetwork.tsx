@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 import { Canvas } from "@react-three/fiber";
-import { ABORIGINAL_PALETTE } from "@/lib/aboriginal-theme";
+import { NEON_PALETTE } from "@/lib/theme";
 import type { Project, Skill } from "@/types";
 
 interface Particle {
@@ -105,11 +105,11 @@ export function ParticleNetwork({ projects, skills }: ParticleNetworkProps) {
 
   return (
     <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
-      <ambientLight intensity={0.5} color={ABORIGINAL_PALETTE.ochre} />
+      <ambientLight intensity={0.5} color={NEON_PALETTE.cyan} />
       <pointLight
         position={[10, 10, 10]}
         intensity={1}
-        color={ABORIGINAL_PALETTE.cream}
+        color={NEON_PALETTE.light}
       />
 
       {particles.map((particle) => (
@@ -129,10 +129,10 @@ export function ParticleNetwork({ projects, skills }: ParticleNetworkProps) {
           <meshStandardMaterial
             color={
               particle.type === "project"
-                ? ABORIGINAL_PALETTE.terracotta
+                ? NEON_PALETTE.green
                 : particle.type === "skill"
-                  ? ABORIGINAL_PALETTE.sienna
-                  : ABORIGINAL_PALETTE.desertSunset
+                  ? NEON_PALETTE.purple
+                  : NEON_PALETTE.pink
             }
             transparent
             opacity={0.9}

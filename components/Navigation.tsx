@@ -24,7 +24,7 @@ export function Navigation() {
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-6 items-center">
-          <div className="flex items-center gap-2 text-cream/60 text-xs font-mono">
+          <div className="flex items-center gap-2 text-neon-light/60 text-xs font-mono">
             <kbd className="px-2 py-1 bg-charcoal border border-cream/20 rounded">
               ⌘K
             </kbd>
@@ -35,7 +35,7 @@ export function Navigation() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-cream/80 hover:text-ochre transition-colors"
+                className="text-neon-light/80 hover:text-neon-cyan transition-colors"
               >
                 {link.label}
               </a>
@@ -45,7 +45,7 @@ export function Navigation() {
 
         {/* Mobile Filter Toggle */}
         <button
-          className="md:hidden text-cream hover:text-ochre transition-colors p-2"
+          className="md:hidden text-neon-light hover:text-neon-cyan transition-colors p-2"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
@@ -67,13 +67,13 @@ export function Navigation() {
                 <a
                   key={link.href}
                   href={link.href}
-                  className="text-lg text-cream/90 hover:text-ochre py-2 px-4 rounded-lg hover:bg-white/5 transition-all text-center font-medium"
+                  className="text-lg text-neon-light/90 hover:text-neon-cyan py-2 px-4 rounded-lg hover:bg-white/5 transition-all text-center font-medium"
                   onClick={() => setIsMobileMenuOpen(false)}
                 >
                   {link.label}
                 </a>
               ))}
-              <div className="pt-4 border-t border-white/10 flex justify-center text-cream/60 text-sm font-mono">
+              <div className="pt-4 border-t border-white/10 flex justify-center text-neon-light/60 text-sm font-mono">
                 <div className="flex items-center gap-2">
                   <span>TAP</span>
                   <kbd className="px-2 py-1 bg-charcoal border border-cream/20 rounded">

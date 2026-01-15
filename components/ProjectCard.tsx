@@ -7,13 +7,13 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
   return (
     <div className="space-y-4">
-      <h3 className="text-xl font-bold text-cream">{project.title}</h3>
-      <p className="text-cream/70 line-clamp-3">{project.description}</p>
+      <h3 className="text-xl font-bold text-neon-light">{project.title}</h3>
+      <p className="text-neon-light/70 line-clamp-3">{project.description}</p>
       <div className="flex flex-wrap gap-2">
         {project.techStack.map((tech, index) => (
           <span
             key={`${tech.name}-${index}`}
-            className="px-3 py-1 bg-ochre/20 text-ochre rounded-full text-sm"
+            className="px-3 py-1 bg-neon-cyan/20 text-neon-cyan rounded-full text-sm"
           >
             {tech.name}
           </span>
@@ -25,7 +25,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.links.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cream hover:text-ochre transition-colors text-sm"
+            className="text-neon-light hover:text-neon-cyan transition-colors text-sm"
           >
             GitHub
           </a>
@@ -35,7 +35,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
             href={project.links.liveUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-cream hover:text-ochre transition-colors text-sm"
+            className="text-neon-light hover:text-neon-cyan transition-colors text-sm"
           >
             Live Demo
           </a>

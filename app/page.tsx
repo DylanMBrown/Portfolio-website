@@ -27,7 +27,7 @@ export default function Home() {
               <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter text-white mb-6 leading-[0.9] mix-blend-difference pointer-events-auto">
                 Building
                 <br />
-                <span className="text-ochre">Digital</span>
+                <span className="text-neon-cyan">Digital</span>
                 <br />
                 Experiences
               </h1>
@@ -38,7 +38,7 @@ export default function Home() {
               <div className="flex gap-4 pointer-events-auto">
                 <a
                   href="/projects"
-                  className="px-8 py-4 bg-ochre text-charcoal font-bold uppercase tracking-wider hover:bg-terracotta transition-all hover:scale-105"
+                  className="px-8 py-4 bg-neon-cyan text-charcoal font-bold uppercase tracking-wider hover:bg-neon-purple transition-all hover:scale-105"
                 >
                   View Work
                 </a>
@@ -50,7 +50,7 @@ export default function Home() {
         <section className="py-32 px-4 bg-black">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-4xl md:text-6xl font-black uppercase tracking-tighter text-white mb-16">
-              Selected <span className="text-ochre">Works</span>
+              Selected <span className="text-neon-cyan">Works</span>
             </h2>
 
             {/* Bento Grid Layout */}

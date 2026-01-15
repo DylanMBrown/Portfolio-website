@@ -25,7 +25,7 @@ export function Terminal({
     const welcomeLines: TerminalLine[] = [
       {
         input: "cat intro.txt",
-        output: "Dylan Brown — Full Stack Developer",
+        output: "Dylan Brown — Web Developer & IT Specialist",
         type: "success",
       },
       {
@@ -87,13 +87,12 @@ export function Terminal({
             <span className="input">{line.input}</span>
             {line.output && (
               <pre
-                className={`output ${
-                  line.type === "success"
+                className={`output ${line.type === "success"
                     ? "text-syntax-green"
                     : line.type === "error"
                       ? "text-syntax-pink"
                       : "text-syntax-gray"
-                }`}
+                  }`}
               >
                 {line.output}
               </pre>
