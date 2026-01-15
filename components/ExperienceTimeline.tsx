@@ -12,7 +12,22 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
     return (
         <div className="relative pl-8 md:pl-0">
             {/* Songline (The Path) */}
-            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-neon-cyan via-neon-purple to-neon-cyan transform -translate-x-1/2 opacity-50" />
+            <motion.div
+                className="absolute left-8 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-neon-cyan via-neon-purple to-neon-cyan transform -translate-x-1/2"
+                animate={{
+                    opacity: [0.3, 0.7, 0.3],
+                    boxShadow: [
+                        "0 0 10px rgba(0, 255, 255, 0.2)",
+                        "0 0 20px rgba(0, 255, 255, 0.5)",
+                        "0 0 10px rgba(0, 255, 255, 0.2)"
+                    ]
+                }}
+                transition={{
+                    duration: 3,
+                    repeat: Infinity,
+                    ease: "easeInOut"
+                }}
+            />
 
             <div className="space-y-12">
                 {experiences.map((job, index) => {
@@ -28,9 +43,9 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
                         >
                             {/* Content Card */}
                             <div className="w-full md:w-1/2 pl-8 md:pl-0">
-                                <GlassCard className="p-6 relative group border-l-4 border-ochre/50">
+                                <GlassCard className="p-6 relative group border-l-4 border-ochre/50 hover:border-neon-cyan/80 transition-colors duration-500">
                                     {/* Connection Dot */}
-                                    <div
+                                    <motion.div
                                         className={`absolute top-1/2 w-4 h-4 rounded-full bg-neon-cyan border-4 border-black z-10 hidden md:block
                     ${isLeft
                                                 ? "-left-[calc(2rem_+_2px)] translate-x-[-50%]" // Adjusted for spacing
@@ -41,9 +56,28 @@ export function ExperienceTimeline({ experiences }: ExperienceTimelineProps) {
                                             left: isLeft ? "auto" : "-42px", // Hardcoded fix for simplicity
                                             right: isLeft ? "-42px" : "auto",
                                         }}
+                                        animate={{
+                                            scale: [1, 1.2, 1],
+                                            backgroundColor: ["#00ffff", "#ffffff", "#00ffff"]
+                                        }}
+                                        transition={{
+                                            duration: 2,
+                                            repeat: Infinity,
+                                            delay: index * 0.2
+                                        }}
                                     />
                                     {/* Mobile Dot */}
-                                    <div className="absolute left-[-2rem] top-8 w-4 h-4 rounded-full bg-neon-cyan border-4 border-black z-10 md:hidden" />
+                                    <motion.div
+                                        className="absolute left-[-2rem] top-8 w-4 h-4 rounded-full bg-neon-cyan border-4 border-black z-10 md:hidden"
+                                        animate={{
+                                            scale: [1, 1.2, 1],
+                                        }}
+                                        transition={{
+                                            duration: 2,
+                                            repeat: Infinity,
+                                            delay: index * 0.2
+                                        }}
+                                    />
 
                                     <div className="flex justify-between items-start mb-2 flex-wrap gap-2">
                                         <h3 className="text-xl font-bold text-neon-light">

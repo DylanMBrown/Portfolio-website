@@ -1,4 +1,4 @@
-import type { AboriginalColor } from "@/lib/aboriginal-theme";
+import type { NeonColor } from "@/lib/theme";
 
 export interface GraffitiMessage {
   id: string;
@@ -6,7 +6,7 @@ export interface GraffitiMessage {
   tag: string;
   x: number;
   y: number;
-  color: AboriginalColor;
+  color: NeonColor;
   retentionDays: number;
   createdAt: Date;
   status: "pending" | "approved" | "rejected";

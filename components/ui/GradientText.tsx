@@ -1,12 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ABORIGINAL_GRADIENTS } from "@/lib/aboriginal-theme";
+import { NEON_GRADIENTS, ABORIGINAL_GRADIENTS } from "@/lib/theme";
 
 interface GradientTextProps {
   children: React.ReactNode;
   className?: string;
-  variant?: "primary" | "secondary";
+  variant?: "primary" | "secondary" | "aboriginal";
 }
 
 export function GradientText({
@@ -15,9 +15,11 @@ export function GradientText({
   variant = "primary",
 }: GradientTextProps) {
   const gradient =
-    variant === "primary"
+    variant === "aboriginal"
       ? ABORIGINAL_GRADIENTS.primary
-      : ABORIGINAL_GRADIENTS.secondary;
+      : variant === "secondary"
+        ? NEON_GRADIENTS.secondary
+        : NEON_GRADIENTS.primary;
 
   return (
     <h2 className={`text-4xl font-bold text-gradient ${className}`}>

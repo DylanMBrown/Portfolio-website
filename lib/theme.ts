@@ -18,5 +18,10 @@ export const NEON_GRADIENTS = {
     sunset: "linear-gradient(135deg, #ff0099 0%, #bc13fe 100%)",
 } as const;
 
+export const ABORIGINAL_GRADIENTS = {
+    primary: "linear-gradient(135deg, #c58c2c 0%, #a63c3c 100%)", // Ochre to Earth Red
+    secondary: "linear-gradient(135deg, #ccff00 0%, #c58c2c 100%)", // Neon Green to Ochre
+} as const;
+
 export type NeonColor = keyof typeof NEON_PALETTE;
 export type NeonGradient = keyof typeof NEON_GRADIENTS;
