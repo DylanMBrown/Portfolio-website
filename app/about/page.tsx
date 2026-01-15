@@ -15,9 +15,9 @@ import { GradientText } from "@/components/ui/GradientText";
 import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 
 export const metadata: Metadata = {
-  title: "About Me | Dylan Brown - Full Stack Developer",
+  title: "About Me | Dylan Brown - Web Developer",
   description:
-    "Learn about Dylan Brown's journey from Aboriginal Student Support and Healthcare to Full Stack Development. Specialist in Next.js, AI Agents, and Digital Sovereignty.",
+    "Learn about Dylan Brown's journey from Aboriginal Student Support and Healthcare to Web Development. Specialist in digital sovereignty and community systems.",
 };
 
 export default function AboutPage() {
@@ -52,13 +52,13 @@ export default function AboutPage() {
                     About <span className="text-ochre">Me</span>
                   </h1>
                   <h2 className="text-2xl text-cream/60 font-mono">
-                    {personalInfo.title} // {personalInfo.location}
+                    {personalInfo.title} {"//"} {personalInfo.location}
                   </h2>
                 </div>
 
                 <div className="space-y-6 text-lg text-cream/80 leading-relaxed font-light">
                   <p>
-                    I am a <strong className="text-ochre">Full Stack Developer</strong> and proud Aboriginal man, leveraging my diverse background in
+                    I am an <strong className="text-ochre">Emerging Web Developer</strong> and proud Aboriginal man, leveraging my diverse background in
                     Healthcare IT and Student Support to build accessible, intelligent web solutions.
                   </p>
                   <p>

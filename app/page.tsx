@@ -27,12 +27,12 @@ export default function Home() {
               <h1 className="text-6xl md:text-9xl font-black uppercase tracking-tighter text-white mb-6 leading-[0.9] mix-blend-difference pointer-events-auto">
                 Building
                 <br />
-                <span className="text-ochre">Intelligent</span>
+                <span className="text-ochre">Digital</span>
                 <br />
-                Web Solutions
+                Experiences
               </h1>
               <p className="text-xl md:text-2xl text-cream/60 max-w-2xl font-mono mb-8 pointer-events-auto">
-                [ Dylan Brown // Full Stack Developer ]
+                [ Dylan Brown // Web Developer & IT Specialist ]
               </p>
 
               <div className="flex gap-4 pointer-events-auto">

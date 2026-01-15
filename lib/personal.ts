@@ -12,13 +12,11 @@ import type {
 
 export const personalInfo = {
   name: "Dylan Brown",
-  title: "Full Stack Developer",
-  tagline: "Building Intelligent Web Solutions",
-  description: `Full Stack Developer transitioning into web development with formal training in front-end and back-end technologies through Meta Certification and current IT Networking studies at NSW Health. Proven track record of mastering complex healthcare IT systems and leading technical training initiatives at NSW Health. Combining strong technical foundation with exceptional problem-solving abilities and experience managing data systems serving diverse user populations.
+  title: "Web Developer & IT Specialist",
+  tagline: "Bridging Healthcare Systems & Modern Web Tech",
+  description: `I am an emerging Web Developer and IT Professional with a strong foundation in healthcare systems and student support. Currently pivoting from a career in NSW Health and TAFE NSW into the digital space, I offer a unique blend of technical discipline, complex problem-solving, and community-focused values.
 
-When I'm not coding, you'll find me exploring homelab infrastructure, networking with the tech community, or learning about the latest developments in AI and machine learning.
-
-I'm always open to new opportunities and collaborations. Let's build something amazing together.`,
+My journey is just beginning. I am "learning by doing"—building real-world projects like 'Mob Kin Connect' to master modern frameworks like Next.js and Tailwind. I am available for freelance projects and keen to help businesses build accessible, culturally-aware digital solutions.`,
   location: "Mount Annan, NSW 2567",
   email: "Dylan.Brown127@tafensw.edu.au",
   availability: "Open to opportunities",
