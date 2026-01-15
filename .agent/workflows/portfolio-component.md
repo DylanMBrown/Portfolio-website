@@ -6,7 +6,9 @@ description: Generate Portfolio Components
    - If the user hasn't specified details, ASK for:
      - Component purpose (e.g., "Skill Card", "Hero Section").
      - Necessary data/props.
-     - Styling preferences (though default to project's Tailwind theme).
+     - **Styling preferences**: Must align with **Neon Tech** theme (Cyan/Purple/Green, Glassmorphism).
+        - Use `text-neon-cyan`, `text-neon-purple`, `bg-neon-dark` etc.
+        - Use `glass-card` class for containers.
 
 2. **Generate Component**
    - Create a new file in `app/components/` (or `components/`).
