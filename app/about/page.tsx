@@ -34,7 +34,7 @@ export default function AboutPage() {
               {/* Profile Image */}
               <div className="flex-shrink-0 mx-auto lg:mx-0 relative group">
                 <div className="absolute inset-0 bg-neon-cyan rounded-full blur-2xl opacity-20 group-hover:opacity-40 transition-opacity" />
-                <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-ochre/30">
+                <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-neon-cyan/30">
                   <Image
                     src="/profile.jpg"
                     alt={personalInfo.name}
@@ -80,7 +80,7 @@ export default function AboutPage() {
                   </h3>
                   <div className="flex flex-wrap gap-3">
                     {["Next.js", "TypeScript", "Python (AI)", "Docker", "Tailwind"].map((tech) => (
-                      <span key={tech} className="px-4 py-2 border border-ochre/30 rounded text-neon-light/80 text-sm hover:bg-neon-cyan/10 transition-colors">
+                      <span key={tech} className="px-4 py-2 border border-neon-cyan/30 rounded text-neon-light/80 text-sm hover:bg-neon-cyan/10 transition-colors">
                         {tech}
                       </span>
                     ))}
@@ -108,7 +108,7 @@ export default function AboutPage() {
         </section>
 
         {/* Values */}
-        <section className="py-24 px-4 bg-black border-t border-ochre/10">
+        <section className="py-24 px-4 bg-black border-t border-neon-cyan/10">
           <div className="max-w-6xl mx-auto">
             <h2 className="text-3xl font-bold text-center text-gradient mb-16">
               Core Values
@@ -117,7 +117,7 @@ export default function AboutPage() {
               {values.map((value) => (
                 <div
                   key={value.title}
-                  className="p-8 border border-white/10 rounded-2xl hover:border-ochre/50 focus-within:border-ochre/50 transition-colors groupbg-gradient-to-br from-white/5 to-transparent"
+                  className="p-8 border border-white/10 rounded-2xl hover:border-neon-cyan/50 focus-within:border-neon-cyan/50 transition-colors groupbg-gradient-to-br from-white/5 to-transparent"
                 >
                   <h3 className="text-xl font-bold text-white mb-4 group-hover:text-neon-cyan transition-colors">
                     {value.title}
