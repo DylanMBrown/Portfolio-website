@@ -1,8 +1,8 @@
 # Dylan Brown - Cyber-Indigenous Portfolio
 
-I am **Dylan Brown**, a Full Stack Developer and proud Aboriginal man. This portfolio explores the intersection of **cultural heritage** and **digital sovereignty**.
+I am **Dylan Brown**, a Web Developer & IT Specialist. This portfolio explores the intersection of **modern technology** and **digital sovereignty**.
 
-Built with the **"Cyber-Indigenous"** aesthetic, it combines brutalist typography, organic noise textures, and traditional Ochre palettes to tell a story of technological adaptation and resilience.
+Built with a **"Neon Tech"** aesthetic, it combines brutalist typography, organic noise textures, and a high-energy Cyan/Purple/Green palette to represent my transition into the tech industry.
 
 ## 🚀 Live Demo
 [dylanbrown.dev](https://dylanbrown.dev) (Placeholder)
@@ -17,9 +17,9 @@ Built with the **"Cyber-Indigenous"** aesthetic, it combines brutalist typograph
 
 ## ✨ Key Features
 
-### 🎨 Design System: "Ochre & Code"
-A custom design system that respects Aboriginal color theory while embracing modern web brutality.
-- **Colors**: Ochre (Gold), Terracotta (Earth), Charcoal (Darkness), Bone (Cream).
+### 🎨 Design System: "Neon Tech"
+A custom design system that embraces distinct cyber-aesthetics.
+- **Colors**: Neon Cyan (Primary), Electric Purple (Secondary), Acid Green (Accent).
 - **Typography**: Large, uppercase, tight-tracking brutalist headers.
 - **Texture**: `NoiseOverlay` component adding film grain to reduce digital sterility.
 
