@@ -40,6 +40,14 @@ export function Navigation() {
                 {link.label}
               </a>
             ))}
+            <a
+              href="/resume.txt"
+              target="_blank"
+              download="Dylan_Brown_Resume.txt"
+              className="px-4 py-1.5 border border-neon-cyan/50 rounded text-neon-cyan text-sm hover:bg-neon-cyan/10 transition-colors"
+            >
+              RESUME
+            </a>
           </div>
         </div>
 
@@ -73,6 +81,13 @@ export function Navigation() {
                   {link.label}
                 </a>
               ))}
+              <a
+                href="/resume.txt"
+                download="Dylan_Brown_Resume.txt"
+                className="text-lg text-neon-cyan border border-neon-cyan/30 py-2 px-4 rounded-lg hover:bg-neon-cyan/5 transition-all text-center font-bold"
+              >
+                DOWNLOAD RESUME
+              </a>
               <div className="pt-4 border-t border-white/10 flex justify-center text-neon-light/60 text-sm font-mono">
                 <div className="flex items-center gap-2">
                   <span>TAP</span>
