@@ -1,36 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dylan Brown - Cyber-Indigenous Portfolio
 
-## Getting Started
+I am **Dylan Brown**, a Full Stack Developer and proud Aboriginal man. This portfolio explores the intersection of **cultural heritage** and **digital sovereignty**.
 
-First, run the development server:
+Built with the **"Cyber-Indigenous"** aesthetic, it combines brutalist typography, organic noise textures, and traditional Ochre palettes to tell a story of technological adaptation and resilience.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚀 Live Demo
+[dylanbrown.dev](https://dylanbrown.dev) (Placeholder)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tech Stack
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Directory)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/)
+- **3D/Graphics**: [Three.js](https://threejs.org/) / [React Three Fiber](https://docs.pmnd.rs/react-three-fiber)
+- **State**: [Zustand](https://github.com/pmndrs/zustand)
+- **Optimization**: [Sharp](https://sharp.pixelplumbing.com/)
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## ✨ Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 🎨 Design System: "Ochre & Code"
+A custom design system that respects Aboriginal color theory while embracing modern web brutality.
+- **Colors**: Ochre (Gold), Terracotta (Earth), Charcoal (Darkness), Bone (Cream).
+- **Typography**: Large, uppercase, tight-tracking brutalist headers.
+- **Texture**: `NoiseOverlay` component adding film grain to reduce digital sterility.
 
-## Learn More
+### 🗺️ Songlines Experience Timeline
+A vertical timeline component (`ExperienceTimeline.tsx`) that visualizes my career journey not as a list, but as a connected path ("Songline") from Community Support to Healthcare Systems to Engineering.
 
-To learn more about Next.js, take a look at the following resources:
+### ⚡ Performance & Accessibility
+- **SEO Optimized**: Metadata, OpenGraph, and Semantic HTML fully audited.
+- **Accessible**: High contrast ratios (WCAG AA compliant) in text.
+- **Responsive**: Adaptive Bento Grids and mobile-first navigation.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Getting Started
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  **Clone the repository**
+    ```bash
+    git clone https://github.com/DylanMBrown/Portfolio-website.git
+    cd Portfolio-website
+    ```
 
-## Deploy on Vercel
+2.  **Install dependencies**
+    ```bash
+    npm install
+    # or
+    pnpm install
+    ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3.  **Run development server**
+    ```bash
+    npm run dev
+    ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+4.  **Open locally**
+    Visit [http://localhost:3000](http://localhost:3000)
+
+## 🤝 Project Highlight: Mob Kin Connect
+This portfolio currently highlights my flagship project, **Mob Kin Connect**, a digital platform for Indigenous kinship mapping and data sovereignty.
+Check it out at: [github.com/DylanMBrown/mob-kin-connect](https://github.com/DylanMBrown/mob-kin-connect)
+
+## 📄 License
+MIT License.
