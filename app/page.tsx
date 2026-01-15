@@ -27,7 +27,6 @@ export default function Home() {
 
   return (
     <>
-      <NoiseOverlay />
       <Navigation />
 
       <main className="bg-black min-h-screen text-white overflow-hidden">
@@ -221,11 +220,6 @@ export default function Home() {
             <a href="/contact" className="inline-block px-12 py-5 bg-white text-black font-black text-xl uppercase tracking-widest hover:bg-neon-cyan transition-colors hover:scale-105 transform duration-300 rounded-sm">
               Start a Conversation
             </a>
-          </div>
-
-          {/* Background noise/grain */}
-          <div className="absolute inset-0 opacity-20 pointer-events-none mix-blend-overlay">
-            <NoiseOverlay />
           </div>
         </section>
 

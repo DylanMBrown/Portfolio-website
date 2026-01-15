@@ -12,6 +12,7 @@ const config: Config = {
       colors: {
         ochre: "#c58c2c", // Earthy yellow-brown
         cream: "#f5f5dc",
+        charcoal: "#121212",
         "earth-red": "#a63c3c", // Red ochre
         neon: {
           cyan: "#00f3ff",

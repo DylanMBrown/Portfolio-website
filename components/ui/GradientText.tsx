@@ -22,7 +22,16 @@ export function GradientText({
         : NEON_GRADIENTS.primary;
 
   return (
-    <h2 className={`text-4xl font-bold text-gradient ${className}`}>
+    <h2
+      className={`text-4xl font-bold ${className}`}
+      style={{
+        background: gradient,
+        WebkitBackgroundClip: "text",
+        WebkitTextFillColor: "transparent",
+        backgroundClip: "text",
+        color: "transparent",
+      }}
+    >
       {children}
     </h2>
   );

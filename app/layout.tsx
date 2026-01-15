@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+import { CommandPalette } from "@/components/ui/CommandPalette";
+import { NoiseOverlay } from "@/components/ui/NoiseOverlay";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const jetbrains = JetBrains_Mono({
@@ -99,6 +101,8 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} ${jetbrains.variable} font-sans`}>
+        <NoiseOverlay className="fixed opacity-[0.03]" />
+        <CommandPalette />
         {children}
       </body>
     </html>

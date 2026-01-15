@@ -1,144 +1,107 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useMemo } from "react";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
-import { Canvas } from "@react-three/fiber";
 import { NEON_PALETTE } from "@/lib/theme";
 import type { Project, Skill } from "@/types";
 
-interface Particle {
+interface ParticleData {
   id: string;
-  position: [number, number, number];
-  velocity: [number, number, number];
+  position: THREE.Vector3;
+  velocity: THREE.Vector3;
   type: "project" | "skill";
-  data: Project | Skill;
 }
 
-interface ParticleNetworkProps {
-  projects: Project[];
-  skills: Skill[];
-}
-
-const animationConfig = {
-  hoverScale: 1.3,
-  hoverDuration: 0.4,
-  floatSpeed: 0.8,
-  connectionOpacity: 0.3,
-  particleRotation: 0.2,
-  mouseInfluence: 0.3,
-  springStiffness: 200,
-  springDamping: 20,
-};
-
-export function ParticleNetwork({ projects, skills }: ParticleNetworkProps) {
-  const [particles, setParticles] = useState<Particle[]>([]);
-  const [connections, setConnections] = useState<[number, number][]>([]);
-  const [hoveredParticle, setHoveredParticle] = useState<string | null>(null);
-  const mouseRef = useRef({ x: 0, y: 0 });
-
-  useEffect(() => {
-    const projectParticles: Particle[] = projects.map((p) => ({
-      id: p.id,
-      position: [
-        (Math.random() - 0.5) * 10,
-        (Math.random() - 0.5) * 6,
-        (Math.random() - 0.5) * 4,
-      ],
-      velocity: [
-        (Math.random() - 0.5) * 0.02,
-        (Math.random() - 0.5) * 0.02,
-        (Math.random() - 0.5) * 0.02,
-      ],
-      type: "project",
-      data: p,
-    }));
-
-    const skillParticles: Particle[] = skills.map((s) => ({
-      id: s.id,
-      position: [
-        (Math.random() - 0.5) * 8,
-        (Math.random() - 0.5) * 5,
-        (Math.random() - 0.5) * 3,
-      ],
-      velocity: [
-        (Math.random() - 0.5) * 0.015,
-        (Math.random() - 0.5) * 0.015,
-        (Math.random() - 0.5) * 0.015,
-      ],
-      type: "skill",
-      data: s,
-    }));
-
-    setParticles([...projectParticles, ...skillParticles]);
-
-    const newConnections: [number, number][] = [];
-    projects.forEach((project, i) => {
-      project.techStack.forEach((tech) => {
-        const matchingSkill = skills.find((s) => s.name === tech.name);
-        if (matchingSkill) {
-          const skillIndex = projects.length + skills.indexOf(matchingSkill);
-          newConnections.push([i, skillIndex]);
-        }
+function MovingParticles({ projects, skills }: { projects: Project[]; skills: Skill[] }) {
+  const { viewport, mouse } = useThree();
+  const particles = useMemo(() => {
+    const p: ParticleData[] = [];
+    const all = [...projects, ...skills];
+    all.forEach((item, i) => {
+      p.push({
+        id: item.id,
+        position: new THREE.Vector3(
+          (Math.random() - 0.5) * 15,
+          (Math.random() - 0.5) * 10,
+          (Math.random() - 0.5) * 5
+        ),
+        velocity: new THREE.Vector3(
+          (Math.random() - 0.5) * 0.01,
+          (Math.random() - 0.5) * 0.01,
+          (Math.random() - 0.5) * 0.01
+        ),
+        type: i < projects.length ? "project" : "skill",
       });
     });
-    setConnections(newConnections);
+    return p;
   }, [projects, skills]);
 
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      mouseRef.current = {
-        x: (e.clientX / window.innerWidth) * 2 - 1,
-        y: -(e.clientY / window.innerHeight) * 2 + 1,
-      };
-    };
+  const meshRefs = useRef<(THREE.Mesh | null)[]>([]);
 
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => window.removeEventListener("mousemove", handleMouseMove);
-  }, [projects, skills]);
+  useFrame((state) => {
+    particles.forEach((p, i) => {
+      const mesh = meshRefs.current[i];
+      if (!mesh) return;
 
-  const handleParticleClick = (particleId: string) => {
-    const project = projects.find((p) => p.id === particleId);
-    if (project) {
-      window.open(project.links.liveUrl || project.links.githubUrl, "_blank");
-    }
-  };
+      // Update position based on velocity
+      p.position.add(p.velocity);
+
+      // Bounce off boundaries
+      if (Math.abs(p.position.x) > 10) p.velocity.x *= -1;
+      if (Math.abs(p.position.y) > 7) p.velocity.y *= -1;
+      if (Math.abs(p.position.z) > 5) p.velocity.z *= -1;
+
+      // Mouse influence
+      const mousePos = new THREE.Vector3(mouse.x * viewport.width / 2, mouse.y * viewport.height / 2, 0);
+      const dist = p.position.distanceTo(mousePos);
+      if (dist < 3) {
+        const force = new THREE.Vector3().subVectors(p.position, mousePos).normalize().multiplyScalar(0.02);
+        p.position.add(force);
+      }
+
+      mesh.position.copy(p.position);
+      mesh.rotation.x += 0.01;
+      mesh.rotation.y += 0.01;
+    });
+  });
 
   return (
-    <Canvas camera={{ position: [0, 0, 5], fov: 60 }}>
-      <ambientLight intensity={0.5} color={NEON_PALETTE.cyan} />
-      <pointLight
-        position={[10, 10, 10]}
-        intensity={1}
-        color={NEON_PALETTE.light}
-      />
-
-      {particles.map((particle) => (
+    <>
+      {particles.map((p, i) => (
         <mesh
-          key={particle.id}
-          position={particle.position}
-          scale={
-            hoveredParticle === particle.id ? animationConfig.hoverScale : 1
-          }
-          onClick={() => handleParticleClick(particle.id)}
-          onPointerOver={() => setHoveredParticle(particle.id)}
-          onPointerOut={() => setHoveredParticle(null)}
-        >
-          <sphereGeometry
-            args={[particle.type === "project" ? 0.4 : 0.25, 32, 32]}
-          />
-          <meshStandardMaterial
-            color={
-              particle.type === "project"
-                ? NEON_PALETTE.green
-                : particle.type === "skill"
-                  ? NEON_PALETTE.purple
-                  : NEON_PALETTE.pink
+          key={p.id}
+          ref={(el) => { meshRefs.current[i] = el; }}
+          onClick={() => {
+            const project = projects.find((proj) => proj.id === p.id);
+            if (project) {
+              window.open(project.links.liveUrl || project.links.githubUrl, "_blank");
             }
+          }}
+        >
+          <sphereGeometry args={[p.type === "project" ? 0.3 : 0.15, 16, 16]} />
+          <meshStandardMaterial
+            color={p.type === "project" ? NEON_PALETTE.green : NEON_PALETTE.purple}
+            emissive={p.type === "project" ? NEON_PALETTE.green : NEON_PALETTE.purple}
+            emissiveIntensity={0.5}
             transparent
-            opacity={0.9}
+            opacity={0.8}
           />
         </mesh>
       ))}
-    </Canvas>
+    </>
+  );
+}
+
+export function ParticleNetwork({ projects, skills }: { projects: Project[]; skills: Skill[] }) {
+  return (
+    <div className="absolute inset-0 z-0 opacity-40">
+      <Canvas camera={{ position: [0, 0, 10], fov: 50 }}>
+        <ambientLight intensity={0.2} />
+        <pointLight position={[10, 10, 10]} intensity={1} color={NEON_PALETTE.cyan} />
+        <spotLight position={[-10, 10, 10]} angle={0.15} penumbra={1} intensity={1} color={NEON_PALETTE.purple} />
+        <MovingParticles projects={projects} skills={skills} />
+      </Canvas>
+    </div>
   );
 }
